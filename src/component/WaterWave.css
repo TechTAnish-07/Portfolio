@@ -1,0 +1,56 @@
+/* WaterWave.css */
+
+.water-wave-container {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  background-color: #f0f0f0; /* Background for the empty part of the circle */
+  margin: 20px auto; /* Center the element */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 5px solid #00aaff; /* A nice blue border */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.water-wave-container span {
+  font-family: Arial, sans-serif;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+  position: relative; /* Keep it on top */
+  z-index: 10;
+}
+
+/* The water and wave effect */
+.water-wave-container::before,
+.water-wave-container::after {
+  content: "";
+  position: absolute;
+  width: 200px; /* Wider than the container to make the wave look natural */
+  height: 200px;
+  bottom: calc(var(--water-level, 0%) - 185px); /* Position based on water level */
+  left: 50%;
+  background-color: #00aaff;
+  border-radius: 45%;
+  animation: wave 5s linear infinite;
+  transition: bottom 0.5s ease-in-out;
+}
+
+/* A second wave with a slight delay for a more realistic effect */
+.water-wave-container::after {
+  border-radius: 40%;
+  background-color: rgba(0, 170, 255, 0.5);
+  animation: wave 7s linear infinite;
+}
+
+@keyframes wave {
+  0% {
+    transform: translate(-50%, 0) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, 0) rotate(360deg);
+  }
+}

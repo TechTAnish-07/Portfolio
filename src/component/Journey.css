@@ -1,0 +1,46 @@
+/* Journey Section - Themed to match FullStack-Container */
+.journey-section {
+  padding: 4rem 2rem;
+  margin: 2rem auto;
+  max-width: 900px;
+
+  /* Themed Background & Effects */
+  background: radial-gradient(circle at top, #111827, #0a0a0a);
+  color: #e0e0e0;
+  border-radius: 16px;
+  box-shadow: 0 0 25px rgba(0, 255, 200, 0.15);
+  border: 1px solid rgba(0, 255, 200, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+/* Section Title */
+.section-title {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 1.8rem;
+  font-weight: 700;
+  color: #34e7b1;
+  letter-spacing: 1px;
+}
+
+/* Journey Text */
+.journey-text {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+  color: #d6d5cd;
+}
+
+/* Paragraph Spacing */
+.journey-text + .journey-text {
+  margin-top: 1rem;
+}
+
+/* Animation for smooth fade-in */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}

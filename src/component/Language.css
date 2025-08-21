@@ -1,0 +1,204 @@
+/* ===== Container & Heading ===== */
+.language-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 24px;
+  padding: 3rem 2rem;
+
+  background: linear-gradient(135deg, rgba(95, 84, 141, 0.25), rgba(58, 59, 110, 0.35));
+  backdrop-filter: blur(12px);
+  border-radius: 1rem;
+}
+
+.language-heading {
+  width: 100%;
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 2rem;
+  text-shadow: 1px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* ===== Card Styling ===== */
+.language-container {
+  display: flex;
+  flex-wrap: wrap;       /* Wraps cards to the next line */
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;             /* ⬅️ Increased space between cards */
+  padding: 3rem 2rem;
+}
+
+.DSA-card,
+.dev-card,
+.python-card {
+  flex: 1 1 300px;        /* Makes cards responsive */
+  max-width: 400px;
+  margin: 10px; 
+  margin-bottom: 5rem; 
+  margin-left: 4rem;      /* Extra breathing space */
+}
+
+
+/* Flip Card Base */
+.flip-card {
+  background: transparent;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  min-height: 420px;
+  transition: transform 0.9s cubic-bezier(0.4, 0.2, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+.flip-card.flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Front & Back Faces */
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  min-height: 420px;
+  backface-visibility: hidden;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.25);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  color: #fff;
+}
+
+.flip-card-front h2,
+.flip-card-back h2 {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  color: #f3f3f3;
+}
+
+.flip-card-front {
+  transform: rotateY(0deg);
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+  text-align: center;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* ===== Skill Section ===== */
+.skill {
+  margin-bottom: 1rem;
+}
+
+.skill-header {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+.skill-name {
+  font-size: 0.95rem;
+}
+
+.stars {
+  color: gold;
+  font-size: 0.9rem;
+}
+
+.progress-bar {
+  height: 8px;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.progress {
+  height: 100%;
+  background: linear-gradient(90deg, #61dbfb, #4cafef, #2196f3);
+  border-radius: 5px;
+  transition: width 0.5s ease;
+}
+
+.skill-footer {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  margin-top: 3px;
+}
+
+.level {
+  text-transform: capitalize;
+}
+
+.level.learning {
+  color: #ff9800;
+}
+
+.level.advanced {
+  color: #4caf50;
+}
+
+.level.expert {
+  color: #00e676;
+}
+
+.percent {
+  font-weight: 600;
+  color: #ddd;
+}
+
+/* ===== Navigation Buttons (Dev card switching) ===== */
+.card-navigation {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+}
+
+.card-navigation button {
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  padding: 0.5rem;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.card-navigation button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.15);
+}
+
+.java-icon {
+  width: 55px;
+  height: 55px;
+}
+
+/* ===== Flip Instruction Text ===== */
+.flip-instruction {
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  font-style: italic;
+  opacity: 0.7;
+  text-align: center;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1100px) {
+  .language-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
