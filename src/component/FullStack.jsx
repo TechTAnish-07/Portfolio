@@ -3,7 +3,7 @@ import './FullStack.css';
 const FullStack = () => {
   return (
     <div className='FullStack-Container'>
-      <h1>frontend</h1>
+      <h1>FrontEnd</h1>
 
 
       <div className='iframe-container'>

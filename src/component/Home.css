@@ -13,3 +13,11 @@
   background-blend-mode: overlay;
   color: white;
 }
+.section-left,
+.section-right {
+  margin: 2rem 0;   /* example */
+}
+.fullstack-section {
+  margin-top: 1rem; /* tighten gap */
+}
+

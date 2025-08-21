@@ -1,12 +1,34 @@
-# React + Vite
+# 🌐 Personal Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is my **personal portfolio website**, built to showcase my skills, projects, and experiences as a developer.  
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
+- Modern and responsive design for all devices 📱💻  
+- Smooth animations and interactive UI ✨  
+- Projects showcase with live links 🔗  
+- Contact form with API handling via **Axios**  
+- Deployed for easy access  
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Tech Stack
+- **Frontend:** React, JavaScript (ES6+), HTML5, CSS3, TailwindCSS  
+- **Backend (in progress):** Spring Boot (for Sanraj Rentals project)  
+- **APIs & Tools:** Axios, Git, GitHub, Netlify/Vercel  
+
+---
+
+## 📂 Folder Structure
+```bash
+portfolio/
+ ┣ 📂 public/
+ ┣ 📂 src/
+ ┃ ┣ 📂 assets/        # Images and icons
+ ┃ ┣ 📂 components/    # Reusable React components
+ ┃ ┣ 📂 pages/         # Pages (Home, Projects, Contact, etc.)
+ ┃ ┣ App.js
+ ┃ ┣ index.js
+ ┣ package.json
+ ┣ README.md

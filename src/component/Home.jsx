@@ -7,25 +7,6 @@ import "./Home.css";
 import Language from "./Language";
 
 const Home = () => {
-  const [scrolled, setScrolled] = useState(false);
-
-
-  useEffect(() => {
-  const handleScroll = () => {
-    const scrollPosition = window.scrollY + window.innerHeight;
-    const pageHeight = document.body.scrollHeight;
-
-    if (scrollPosition >= pageHeight * 0.8) {   // 80% down
-      setScrolled(true);
-    }else{
-      setScrolled(false);
-    }
-  };
-
-  window.addEventListener("scroll", handleScroll);
-  return () => window.removeEventListener("scroll", handleScroll);
-}, []);
-
 
   return (
     <div className="home-container">
@@ -43,7 +24,7 @@ const Home = () => {
         </section>
       </motion.div>
       <motion.div
-        className="section right"
+        className="section-right"
         initial={{ opacity: 0, x: 150, scale: 0.8 }}
         whileInView={{ opacity: 1, x: 0, scale: 0.9 }}
         whileHover={{ scale: 0.95 }}
@@ -54,7 +35,7 @@ const Home = () => {
       </motion.div>
       {/* DSA - from left */}
       <motion.div
-        className="section left"
+        className="section-left"
         initial={{ opacity: 0, x: -150, scale: 0.8 }}
         whileInView={{ opacity: 1, x: 0, scale: 0.9 }}
         whileHover={{ scale: 0.95 }}
@@ -66,13 +47,15 @@ const Home = () => {
 
     
 <motion.div
-  className="section right"
+  className="section-right fullstack-section"
   initial={{ opacity: 0, x: 150, scale: 0.8 }}
-  animate={scrolled ? { opacity: 1, x: 0, scale: 1 } : {}}
+  whileInView={{ opacity: 1, x: 0, scale: 0.9 }}
+  viewport={{ amount: 0.4, once: true }}
   transition={{ duration: 0.9, ease: "easeInOut" }}
 >
   <FullStack />
 </motion.div>
+
 
 
 
