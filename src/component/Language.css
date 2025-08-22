@@ -4,31 +4,33 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: flex-start;
-  gap: clamp(16px, 4vw, 40px); /* Responsive gap */
-  padding: clamp(1.5rem, 5vw, 3rem) clamp(1rem, 3vw, 2rem);
+  gap: clamp(20px, 5vw, 40px); /* Increased responsive gap */
+  padding: clamp(2rem, 6vw, 4rem) clamp(1.5rem, 4vw, 3rem); /* Increased padding */
   background: linear-gradient(135deg, rgba(95, 84, 141, 0.25), rgba(58, 59, 110, 0.35));
   backdrop-filter: blur(12px);
   border-radius: 1rem;
   width: 100%;
+  max-width: 1400px; /* Added max-width for better large screen experience */
+  margin: 0 auto; /* Center the container */
   box-sizing: border-box;
 }
 
 .language-heading {
   width: 100%;
   text-align: center;
-  font-size: clamp(1.5rem, 5vw, 2.2rem); /* Responsive font size */
+  font-size: clamp(1.8rem, 6vw, 2.5rem); /* Increased font size range */
   font-weight: 700;
   color: #fff;
-  margin-bottom: clamp(1rem, 3vw, 2rem);
+  margin-bottom: clamp(1.5rem, 4vw, 2.5rem); /* Increased bottom margin */
   text-shadow: 1px 2px 8px rgba(0, 0, 0, 0.3);
   line-height: 1.2;
 }
 
 /* ===== Card Styling ===== */
 .DSA-card, .dev-card, .python-card {
-  flex: 1 1 280px; /* Smaller minimum width for mobile */
-  max-width: 400px;
-  min-width: 280px; /* Prevents cards from getting too small */
+  flex: 1 1 320px; /* Increased minimum width for better mobile spacing */
+  max-width: 420px; /* Slightly increased max width */
+  min-width: 300px; /* Increased minimum width */
   margin: 0; /* Remove individual margins, use container gap instead */
   width: 100%;
   box-sizing: border-box;
@@ -46,7 +48,7 @@
 .flip-card-inner {
   position: relative;
   width: 100%;
-  min-height: clamp(350px, 50vw, 420px); /* Responsive height */
+  min-height: clamp(400px, 55vw, 450px); /* Increased height for better mobile spacing */
   transition: transform 0.9s cubic-bezier(0.4, 0.2, 0.2, 1);
   transform-style: preserve-3d;
 }
@@ -59,10 +61,10 @@
 .flip-card-front, .flip-card-back {
   position: absolute;
   width: 100%;
-  min-height: clamp(350px, 50vw, 420px);
+  min-height: clamp(400px, 55vw, 450px); /* Increased height */
   backface-visibility: hidden;
   border-radius: 16px;
-  padding: clamp(1rem, 3vw, 1.5rem);
+  padding: clamp(1.5rem, 4vw, 2rem); /* Increased padding for better spacing */
   box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.25);
   background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(12px);
@@ -94,7 +96,7 @@
 
 /* ===== Skill Section ===== */
 .skill {
-  margin-bottom: clamp(0.8rem, 2vw, 1rem);
+  margin-bottom: clamp(1rem, 3vw, 1.5rem); /* Increased spacing between skills */
 }
 
 .skill-header {
@@ -235,31 +237,31 @@
   .language-container {
     flex-direction: column;
     align-items: center;
-    gap: 2rem;
-    padding: 2rem 1rem;
+    gap: 2.5rem; /* Increased gap between cards */
+    padding: 2.5rem 1.5rem; /* Increased padding */
   }
   
   .DSA-card, .dev-card, .python-card {
     flex: none;
     width: 100%;
-    max-width: 500px;
+    max-width: 550px; /* Increased max-width for tablets */
     min-width: unset;
   }
   
   .flip-card-inner {
-    min-height: 380px;
+    min-height: 420px; /* Increased height for tablets */
   }
   
   .flip-card-front, .flip-card-back {
-    min-height: 380px;
+    min-height: 420px;
   }
 }
 
 /* Mobile phones */
 @media (max-width: 480px) {
   .language-container {
-    padding: 1.5rem 0.75rem;
-    gap: 1.5rem;
+    padding: 2rem 1rem; /* Increased padding for mobile */
+    gap: 2rem; /* Increased gap */
     margin: 0 0.5rem;
   }
   
@@ -268,12 +270,12 @@
   }
   
   .flip-card-inner {
-    min-height: 320px;
+    min-height: 380px; /* Increased height for mobile */
   }
   
   .flip-card-front, .flip-card-back {
-    min-height: 320px;
-    padding: 1rem;
+    min-height: 380px;
+    padding: 1.5rem; /* Increased padding */
     border-radius: 12px;
   }
   
@@ -283,37 +285,38 @@
   }
   
   .skill-name {
-    font-size: 0.85rem;
+    font-size: 0.9rem; /* Slightly larger font */
   }
   
   .stars {
-    font-size: 0.8rem;
+    font-size: 0.85rem; /* Slightly larger font */
   }
   
   .card-navigation {
-    gap: 1rem;
+    gap: 1.2rem; /* Increased gap */
+    margin-top: 1.5rem; /* Increased margin */
   }
   
   .java-icon {
-    width: 40px;
-    height: 40px;
+    width: 45px; /* Slightly larger icons */
+    height: 45px;
   }
 }
 
 /* Extra small phones */
 @media (max-width: 360px) {
   .language-container {
-    padding: 1rem 0.5rem;
+    padding: 1.5rem 1rem; /* Increased padding for very small screens */
     border-radius: 0.5rem;
   }
   
   .flip-card-front, .flip-card-back {
-    padding: 0.875rem;
+    padding: 1.25rem; /* Increased padding */
     border-radius: 8px;
   }
   
   .language-heading {
-    font-size: 1.4rem;
+    font-size: 1.6rem; /* Slightly larger heading */
   }
 }
 
