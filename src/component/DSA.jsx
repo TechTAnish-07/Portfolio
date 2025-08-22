@@ -38,19 +38,19 @@ const DSA = () => {
           <FaCode className="icon" /> Codolio Profile <FaExternalLinkAlt className="ext-icon" />
         </a>
 
-        <a href="https://leetcode.com/TAnish07/" target="_blank" rel="noreferrer" className="dsa-link">
+        <a href="https://leetcode.com/u/TAnish_07/" target="_blank" rel="noreferrer" className="dsa-link">
           <SiLeetcode className="icon" /> LeetCode <FaExternalLinkAlt className="ext-icon" />
         </a>
 
-        <a href="https://www.codechef.com/users/tanish07" target="_blank" rel="noreferrer" className="dsa-link">
+        <a href="https://www.codechef.com/users/tanish_7" target="_blank" rel="noreferrer" className="dsa-link">
           <SiCodechef className="icon" /> CodeChef <FaExternalLinkAlt className="ext-icon" />
         </a>
 
-        <a href="https://codeforces.com/profile/TAnish07" target="_blank" rel="noreferrer" className="dsa-link">
+        <a href="https://codeforces.com/profile/TAnish_29" target="_blank" rel="noreferrer" className="dsa-link">
           <SiCodeforces className="icon" /> CodeForces <FaExternalLinkAlt className="ext-icon" />
         </a>
 
-        <a href="https://auth.geeksforgeeks.org/user/TAnish07/practice/" target="_blank" rel="noreferrer" className="dsa-link">
+        <a href="https://www.geeksforgeeks.org/user/patidar207me/" target="_blank" rel="noreferrer" className="dsa-link">
           <SiGeeksforgeeks className="icon" /> GeeksForGeeks <FaExternalLinkAlt className="ext-icon" />
         </a>
       </div>
