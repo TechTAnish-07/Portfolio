@@ -7,8 +7,8 @@ const Welcome = ({ onScroll }) => (
   <div
     className="welcome-container"
     onWheel={onScroll}
-  //  onTouchMove={onScroll}
-  //  onClick={onScroll}
+    onTouchMove={onScroll}
+   onClick={onScroll}
   >
     <div className="welcome-content">
       <h1 className="welcome-title">Hey, I'm Tanish Patidar👋</h1>
