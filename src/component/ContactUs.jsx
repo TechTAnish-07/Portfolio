@@ -1,90 +1,90 @@
-import React, { useState } from 'react';
- // Import the CSS
+import React, { useState, useRef } from 'react';
+import emailjs from '@emailjs/browser';
 import './ContactUs.css';
+
 const ContactUs = () => {
+  const form = useRef();
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    message: ''
+    message: '',
   });
 
   const [status, setStatus] = useState('');
   const [submitted, setSubmitted] = useState(false);
 
   const handleChange = (e) => {
-    setFormData(prev => ({
-      ...prev,
-      [e.target.name]: e.target.value
-    }));
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const validateEmail = (email) =>
-    /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-
-  const handleSubmit = (e) => {
+  const sendEmail = (e) => {
     e.preventDefault();
 
-    const { name, email, message } = formData;
+    const validateEmail = (email) =>
+      /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
-    if (!name || !email || !message) {
-      setStatus('Please fill out all fields.');
-      return;
-    }
-
-    if (!validateEmail(email)) {
+    if (!validateEmail(formData.email)) {
       setStatus('Please enter a valid email address.');
       return;
     }
 
-    setSubmitted(true);
-    setStatus('Your message has been "sent"! (UI only)');
-    setFormData({ name: '', email: '', message: '' });
-
-    setTimeout(() => {
-      setSubmitted(false);
-      setStatus('');
-    }, 4000);
+    emailjs
+      .sendForm('service_awi20ay', 'template_mlrtt7x', form.current, {
+        publicKey: 'mih2qcs43emd4XuSC',
+      })
+      .then(
+        () => {
+          console.log('SUCCESS!');
+          setSubmitted(true);
+          setStatus('Message sent successfully!');
+          setFormData({ name: '', email: '', message: '' });
+        },
+        (error) => {
+          console.log('FAILED...', error.text);
+          setStatus('Failed to send message. Try again.');
+        }
+      );
   };
 
   return (
-    <div class="page-wrapper">
-
-    <div className="contact-container">
-      <h2>Contact Us</h2>
-      <form onSubmit={handleSubmit} className="contact-form">
-        <input
-          type="text"
-          name="name"
-          placeholder="Your Name"
-          value={formData.name}
-          onChange={handleChange}
-          className="contact-input"
-        />
-        <input
-          type="email"
-          name="email"
-          placeholder="Your Email"
-          value={formData.email}
-          onChange={handleChange}
-          className="contact-input"
-        />
-        <textarea
-          name="message"
-          rows="5"
-          placeholder="Your Message"
-          value={formData.message}
-          onChange={handleChange}
-          className="contact-textarea"
-        />
-        <button
-          type="submit"
-          className={`contact-button ${submitted ? 'submitted' : ''}`}
-        >
-          {submitted ? 'Sent!' : 'Send Message'}
-        </button>
-        {status && <p className="status-message">{status}</p>}
-      </form>
-    </div>
+    <div className="page-wrapper">
+      <div className="contact-container">
+        <h2>Contact Us</h2>
+        <form ref={form} onSubmit={sendEmail} className="contact-form">
+          <input
+            type="text"
+            name="name"
+            placeholder="Your Name"
+            value={formData.name}
+            onChange={handleChange}
+            className="contact-input"
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Your Email"
+            value={formData.email}
+            onChange={handleChange}
+            className="contact-input"
+          />
+          <textarea
+            name="message"
+            rows="5"
+            placeholder="Your Message"
+            value={formData.message}
+            onChange={handleChange}
+            className="contact-textarea"
+          />
+          <button
+            type="submit"
+            className={`contact-button ${submitted ? 'submitted' : ''}`}
+          >
+            {submitted ? 'Sent!' : 'Send Message'}
+          </button>
+          {status && <p className="status-message">{status}</p>}
+        </form>
+      </div>
     </div>
   );
 };
