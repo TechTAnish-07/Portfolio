@@ -12,8 +12,8 @@ This is my **personal portfolio website**, built to showcase my skills, projects
 - Deployed for easy access  
 
 ---
-- click on the link to see my portfolio
-[Link Text](https://tanishportfolio29.netlify.app/)
+
+[- click on the link to see my portfolio](https://tanishportfolio29.netlify.app/)
 
 
 ## 🛠️ Tech Stack
