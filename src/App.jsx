@@ -9,7 +9,6 @@ import FullStack from './component/FullStack';
 import Journey from './component/Journey';
 import ContactUs from './component/ContactUs';
 import ErrorPage from './component/ErrorPage';
-import Profile from './component/Profile';
  // Optional
 
 function App() {

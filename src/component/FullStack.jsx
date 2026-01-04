@@ -1,58 +1,80 @@
-import React from 'react'
-import './FullStack.css';
-const FullStack = () => {
+import React from "react";
+import "./FullStack.css";
+
+const ProjectCard = ({
+  title,
+  iframeSrc,
+  iframeTitle,
+  iframeClass,
+  projectLink,
+  children,
+}) => {
   return (
-    <div className='FullStack-Container'>
-      <h1>FrontEnd</h1>
+    <div className="iframe-container">
+      <h2>{title}</h2>
 
+      <iframe
+        src={iframeSrc}
+        title={iframeTitle}
+        loading="lazy"
+        className={iframeClass}
+      />
 
-      <div className='iframe-container'>
-        <h2> Sangraj-rentals Project </h2>
-        <iframe
-          src="https://sangraj-rentals.netlify.app/"
-          title="Sangra-rentals Project"
-          loading="lazy"
-          className="Sanraj-iframe"
-        >
-        </iframe>
-        <button className='view-button'>
-          <a href="https://sangraj-rentals.netlify.app/" target="Sangraj" rel="noopener noreferrer">
+      {projectLink && (
+        <button className="view-button">
+          <a
+            href={projectLink}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             View Project
           </a>
         </button>
-        <p>
-         The Sanraj Rentals project has its frontend developed in React, where API handling is
-          efficiently managed using Axios for smooth communication between the client and server.
-           The frontend ensures a responsive and user-friendly interface for customers to explore
-            rental options easily. Currently, I am also working on developing its backend using Spring 
-            Boot, which will provide robust REST APIs, secure data management, and scalable services. 
-            Together, this combination of React and Spring Boot aims to deliver a complete, reliable, 
-            and modern web application for rental management.</p>
-      </div>
-      <div>
-        <div className='iframe-container'>
-          <h2> Pikachu Project </h2>
-          <iframe
-            src="https://pokemon-07.netlify.app/"
-            title="Pikachu api Project"
-            loading="lazy"
-            className="pikachu-iframe"
-          >
-          </iframe>
+      )}
 
-          <p>
-
-            In this project, API handling is implemented using React along with Axios for making 
-            seamless HTTP requests. The application, themed around Pikachus, fetches and displays 
-            dynamic data by interacting with external APIs in real-time. Axios is used for its simplicity
-             and powerful features such as interceptors, error handling, and request cancellation, which 
-             makes the overall data flow smooth and reliable. This ensures that the project is efficient,
-              scalable, and provides users with a responsive and interactive experience while working with
-               Pikachu-related data.        </p>
-        </div>
-      </div>
+      <p>{children}</p>
     </div>
-  )
-}
+  );
+};
 
-export default FullStack
+const FullStack = () => {
+  return (
+    <section className="FullStack-Container">
+      <ProjectCard
+        title="Sangraj Rentals — Full Stack Project"
+        iframeSrc="https://sangrajrentalll.netlify.app/"
+        iframeTitle="Sangraj Rentals Project"
+        iframeClass="Sanraj-iframe"
+        projectLink="https://sangrajrentalll.netlify.app/"
+      >
+        Sangraj Rentals is a full-stack car rental platform with a modern
+        React-based frontend that communicates with backend services using
+        Axios for smooth and efficient API handling. The UI is fully responsive
+        and designed to provide a seamless booking experience for users.
+        <br /><br />
+        The backend is being developed using Spring Boot, focusing on secure
+        REST APIs, authentication, scalable architecture, and reliable data
+        management. Together, React and Spring Boot form a robust and
+        production-ready rental management system.
+      </ProjectCard>
+
+      <ProjectCard
+        title="Pikachu API Project"
+        iframeSrc="https://pokemon-07.netlify.app/"
+        iframeTitle="Pikachu API Project"
+        iframeClass="pikachu-iframe"
+      >
+        This project demonstrates efficient API integration using React and
+        Axios to fetch and display dynamic Pokémon data in real time. Axios
+        enables clean request handling, error management, and smooth data flow
+        across the application.
+        <br /><br />
+        The Pikachu-themed UI enhances user engagement while ensuring fast,
+        responsive interactions, making the application scalable and reliable
+        for real-world API-driven use cases.
+      </ProjectCard>
+    </section>
+  );
+};
+
+export default FullStack;

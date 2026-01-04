@@ -3,6 +3,7 @@ import './Language.css'; // Ensure this CSS file is in the same folder
 import { FaReact } from "react-icons/fa";
 import Javaimg from '../assets/Javaimg.webp'; // Verify this path is correct
 import Devimg from '../assets/Dev-img.webp';  // Verify this path is correct
+import { percent } from 'framer-motion';
 
 const Language = () => {
   // State to track which card is flipped
@@ -29,7 +30,7 @@ const Language = () => {
     { name: "HTML/CSS", level: "Expert", stars: 5, percent: 90 },
   ];
   const backendSkills = [
-    { name: "Springboot", level: "Learning", stars: 4, percent: 50 },
+    { name: "Springboot", level: "Learning", stars: 4, percent: 80 },
     { name: "Java", level: "Advanced", stars: 4, percent: 82 },
   ];
   const dsaSkills = [
@@ -46,6 +47,7 @@ const Language = () => {
     { name: "Git", level: "Advanced", stars: 4, percent: 90 },
     { name: "VSCode", level: "Expert", stars: 5, percent: 95 },
     { name: "Netlify", level: "Intermediate", stars: 4, percent: 80 },
+    { name :"Render", level:"Intermediate" , stars : 4 , percent:75}
   ];
 
   // Reusable SkillBar Component

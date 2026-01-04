@@ -46,15 +46,7 @@ const Home = () => {
       </motion.div>
 
     
-<motion.div
-  className="section-right fullstack-section"
-  initial={{ opacity: 0, x: 150, scale: 0.8 }}
-  whileInView={{ opacity: 1, x: 0, scale: 0.9 }}
-  viewport={{ amount: 0.4, once: true }}
-  transition={{ duration: 0.9, ease: "easeInOut" }}
->
-  <FullStack />
-</motion.div>
+
 
 
 
