@@ -1,7 +1,7 @@
 import React from 'react';
 import './Profile.css';
 import profileImage from '../assets/Profileimg.jpeg'; // Adjust path if needed
-import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { FaDownload, FaGithub, FaLinkedin } from 'react-icons/fa';
 import { SiNetlify, SiGmail } from 'react-icons/si';
 import { MdEmail } from 'react-icons/md';
 const Profile = () => {
@@ -25,7 +25,17 @@ const Profile = () => {
                     </p>
 
                     {/* Social Links */}
-                   
+                    <div className="resume-section">
+                        <a
+                            href="/src/assets/ResumeTanish.pdf"
+                            download="src/assets/ResumeTanish.pdf"
+                            className="resume-btn"
+                        >
+                            <FaDownload size={18} />
+                            Download Resume
+                            
+                        </a>
+                    </div>
                     <div className="social-links">
                         <a
                             href="https://github.com/TechTAnish-07"

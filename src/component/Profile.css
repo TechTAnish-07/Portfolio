@@ -85,3 +85,29 @@
   color: #ffd700;
   transform: scale(1.2);
 }
+.resume-section {
+    margin-top: 1.5rem;
+}
+
+.resume-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 28px;
+    background-color: #4f46e5;       /* indigo — change to your theme color */
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.25s ease, transform 0.2s ease;
+}
+
+.resume-btn:hover {
+    background-color: #4338ca;
+    transform: translateY(-2px);
+}
+
+.resume-btn:active {
+    transform: translateY(0);
+}

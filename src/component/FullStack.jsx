@@ -40,6 +40,22 @@ const ProjectCard = ({
 const FullStack = () => {
   return (
     <section className="FullStack-Container">
+       <ProjectCard
+        title="Live Interview"
+        iframeSrc="https://live-interview-ten.vercel.app/"
+        iframeTitle="Live Interview"
+        iframeClass="Interview-iframe"
+         projectLink="https://live-interview-ten.vercel.app/"
+      >
+      I  developed a Live Interview Platform designed to simulate real technical interviews and enable seamless interaction between interviewers and candidates.
+         The platform supports real-time video communication, collaborative code editing, and live problem solving, creating an environment similar to actual technical interviews.
+         It integrates features such as secure authentication,
+          WebSocket-based real-time communication, and an interactive coding environment, allowing candidates to write and execute code while discussing solutions with the interviewer.
+           The system focuses on interview integrity, smooth user experience, and scalable backend architecture, ensuring reliable performance during live sessions. This project demonstrates 
+           my ability to build full-stack applications, 
+           handle real-time systems, and design platforms that solve practical problems in the technical hiring process.
+       
+      </ProjectCard>
       <ProjectCard
         title="Sangraj Rentals — Full Stack Project"
         iframeSrc="https://sangrajrentalll.netlify.app/"
@@ -58,21 +74,7 @@ const FullStack = () => {
         production-ready rental management system.
       </ProjectCard>
 
-      <ProjectCard
-        title="Pikachu API Project"
-        iframeSrc="https://pokemon-07.netlify.app/"
-        iframeTitle="Pikachu API Project"
-        iframeClass="pikachu-iframe"
-      >
-        This project demonstrates efficient API integration using React and
-        Axios to fetch and display dynamic Pokémon data in real time. Axios
-        enables clean request handling, error management, and smooth data flow
-        across the application.
-        <br /><br />
-        The Pikachu-themed UI enhances user engagement while ensuring fast,
-        responsive interactions, making the application scalable and reliable
-        for real-world API-driven use cases.
-      </ProjectCard>
+     
     </section>
   );
 };
