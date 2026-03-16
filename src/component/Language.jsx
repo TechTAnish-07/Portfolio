@@ -69,7 +69,7 @@ const Language = () => {
 
   return (
     <div className='language-container'>
-      <h1 className='language-heading'>Skills Section</h1>
+     <h1 className='language-heading'>💻 Tech Stack</h1>
 
       {/* DSA Card */}
       <div className='DSA-card'>
