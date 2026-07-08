@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { FaTrophy, FaMapMarkerAlt, FaExternalLinkAlt } from "react-icons/fa";
 import "./Experience.css";
 
 const Experience = () => {
@@ -9,6 +10,7 @@ const Experience = () => {
       role: "AI & Backend Development Intern",
       duration: "May 2026 – Present",
       location: "Indore, India",
+      mapUrl: "https://www.google.com/maps/search/?api=1&query=47Billion+Crystal+IT+Park+Khandwa+Road+Indore+452001",
       points: [
         <>
           Built an intelligent <strong>QA Bot</strong> using <strong>LangChain</strong> and <strong>RAG architectures</strong> to automate queries and enhance retrieval accuracy.
@@ -63,7 +65,16 @@ const Experience = () => {
               <div className="company-info">
                 <h3>{exp.company}</h3>
                 <p className="role-title">{exp.role}</p>
-                <p className="location-tag">📍 {exp.location}</p>
+                <a
+                  href={exp.mapUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="location-link"
+                >
+                  <FaMapMarkerAlt style={{ marginRight: '6px', color: '#61DBFB' }} />
+                  {exp.location}
+                  <FaExternalLinkAlt size={11} style={{ marginLeft: '4px', opacity: 0.8 }} />
+                </a>
               </div>
               <div className="duration-pill">{exp.duration}</div>
             </div>
@@ -91,7 +102,9 @@ const Experience = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          <div className="achievement-icon">🏆</div>
+          <div className="achievement-icon">
+            <FaTrophy color="#F89F1B" size={28} />
+          </div>
           <div className="achievement-content">
             <h4>Flipkart Grid 7.0 Semi-Finalist</h4>
             <p>

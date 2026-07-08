@@ -4,20 +4,22 @@
   gap: 1.5rem;
   padding-top: 85px;
   min-height: 100vh;
-  background: radial-gradient(circle at top, #0d111c 0%, #06080e 100%);
-  color: #fff;
+  background: var(--bg-primary, #0d111c);
+  color: var(--text-primary, #fff);
   overflow-x: hidden;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 .home-footer {
   text-align: center;
   padding: 3rem 1rem;
-  color: #64748b;
+  color: var(--text-muted, #64748b);
   font-size: 0.95rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 1px solid var(--border-color, rgba(255, 255, 255, 0.05));
   margin-top: 2rem;
 }
 
 .home-footer span {
-  color: #61DBFB;
+  color: var(--accent-primary, #61DBFB);
+  font-weight: 600;
 }

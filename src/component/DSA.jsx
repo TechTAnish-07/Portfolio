@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import './DSA.css';
-import { FaCode, FaExternalLinkAlt, FaTrophy } from 'react-icons/fa';
+import { FaExternalLinkAlt } from 'react-icons/fa';
 import { SiLeetcode, SiCodeforces, SiCodechef, SiGeeksforgeeks } from 'react-icons/si';
 
 const DSA = () => {
@@ -85,13 +85,21 @@ const DSA = () => {
                 <span className="cpsc-rating">{item.rating}</span>
               </div>
               <p className="cpsc-desc">{item.desc}</p>
+              <ul className="cpsc-highlights">
+                {item.highlights.map((h, i) => (
+                  <li key={i}>{h}</li>
+                ))}
+              </ul>
             </div>
 
-            <ul className="cpsc-highlights">
-              {item.highlights.map((h, i) => (
-                <li key={i}>{h}</li>
-              ))}
-            </ul>
+            <a
+              href={item.link}
+              target="_blank"
+              rel="noreferrer"
+              className="card-profile-btn"
+            >
+              View {item.platform} Profile <FaExternalLinkAlt size={12} />
+            </a>
           </motion.div>
         ))}
       </div>
@@ -108,24 +116,6 @@ const DSA = () => {
             className="codolio-iframe"
           />
         </div>
-      </div>
-
-      <div className="dsa-links">
-        <a href="https://codolio.com/profile/TAnish07" target="_blank" rel="noreferrer" className="dsa-link">
-          <FaCode /> Codolio <FaExternalLinkAlt size={12} />
-        </a>
-        <a href="https://leetcode.com/u/TAnish_07/" target="_blank" rel="noreferrer" className="dsa-link">
-          <SiLeetcode color="#F89F1B" /> LeetCode <FaExternalLinkAlt size={12} />
-        </a>
-        <a href="https://www.codechef.com/users/tanish_7" target="_blank" rel="noreferrer" className="dsa-link">
-          <SiCodechef color="#86513A" /> CodeChef <FaExternalLinkAlt size={12} />
-        </a>
-        <a href="https://codeforces.com/profile/TAnish_29" target="_blank" rel="noreferrer" className="dsa-link">
-          <SiCodeforces color="#1F8ACB" /> Codeforces <FaExternalLinkAlt size={12} />
-        </a>
-        <a href="https://www.geeksforgeeks.org/user/patidar207me/" target="_blank" rel="noreferrer" className="dsa-link">
-          <SiGeeksforgeeks color="#2F8D46" /> GeeksForGeeks <FaExternalLinkAlt size={12} />
-        </a>
       </div>
     </div>
   );

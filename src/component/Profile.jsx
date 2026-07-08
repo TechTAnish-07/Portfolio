@@ -1,9 +1,9 @@
 import React from 'react';
 import './Profile.css';
 import profileImage from '../assets/Profileimg.jpeg';
-import resumePDF from '../assets/ResumeTanish.pdf';
+import resumePDF from '../assets/ResumeTanishMain.pdf';
 import { FaDownload, FaGithub, FaLinkedin } from 'react-icons/fa';
-import { SiNetlify, SiGmail } from 'react-icons/si';
+import { SiGmail } from 'react-icons/si';
 import { MdPhone } from 'react-icons/md';
 
 const Profile = () => {
@@ -12,8 +12,8 @@ const Profile = () => {
       <div className="profile-wrapper">
         <div className="profile-text-section">
           <div className="hero-badges">
-            <span className="hero-badge badge-ai">⚡ AI & Backend Development Intern @ 47Billion</span>
-            <span className="hero-badge badge-edu">🎓 B.Tech CSE @ IIIT Tiruchirappalli</span>
+            <span className="hero-badge badge-ai">AI & Backend Development Intern @ 47Billion</span>
+            <span className="hero-badge badge-edu">B.Tech CSE @ IIIT Tiruchirappalli</span>
           </div>
 
           <h1 className="profile-heading">Tanish Patidar</h1>

@@ -1,20 +1,15 @@
-.home-container {
-  padding-top: 80px; /* adjust based on navbar height */
-}
-body {
-  background: radial-gradient(circle at top, #0a0a0a, #050505);
-  color: #e0e0e0;
-  font-family: 'Segoe UI', sans-serif;
-  margin: 0;
-  padding: 0;
-  line-height: 1.6;
-}
-html, body {
-  height: auto;         /* don’t lock it to 100% */
-  min-height: 100vh;    /* at least full screen */
-  overflow-x: hidden;   /* prevent sideways scroll */
+.App {
+  min-height: 100vh;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
-body {
-  display: block;       /* ensure flow */
+.home-container {
+  padding-top: 80px;
+}
+
+html, body {
+  min-height: 100vh;
+  overflow-x: hidden;
 }

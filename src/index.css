@@ -1,0 +1,22 @@
+:root {
+  --bg-primary: #0d111c;
+  --bg-secondary: rgba(18, 22, 34, 0.85);
+  --bg-card: rgba(255, 255, 255, 0.03);
+  --bg-card-hover: rgba(97, 219, 251, 0.08);
+  --text-primary: #ffffff;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --border-color: rgba(255, 255, 255, 0.08);
+  --border-hover: rgba(97, 219, 251, 0.35);
+  --accent-primary: #61DBFB;
+  --accent-secondary: #6366f1;
+  --shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.45);
+}
+
+html, body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  margin: 0;
+  padding: 0;
+  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}

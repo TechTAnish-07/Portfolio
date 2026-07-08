@@ -8,8 +8,8 @@ const Welcome = ({ onScroll }) => (
     onTouchMove={onScroll}
   >
     <div className="welcome-content">
-      <span className="welcome-badge">🚀 AI & FULL-STACK SYSTEMS ENGINEER</span>
-      <h1 className="welcome-title">Hey, I'm Tanish Patidar 👋</h1>
+      <span className="welcome-badge">AI & FULL-STACK SYSTEMS ENGINEER</span>
+      <h1 className="welcome-title">Hey, I'm Tanish Patidar</h1>
       <h2 className="welcome-subtitle">Welcome To My Digital Playground</h2>
 
       <p className="welcome-message">
@@ -25,9 +25,9 @@ const Welcome = ({ onScroll }) => (
           className="enter-portfolio-btn"
           onClick={onScroll}
         >
-          Explore Portfolio ✨
+          Explore Portfolio
         </button>
-        <p className="scroll-invite">⬇ Or scroll / swipe to enter ⬇</p>
+        <p className="scroll-invite">Or scroll / swipe to enter</p>
       </div>
     </div>
   </div>
