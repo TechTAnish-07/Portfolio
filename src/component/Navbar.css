@@ -1,20 +1,23 @@
-/* Navbar.css */
-
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap');
 
 .navbar {
   width: 100%;
   position: fixed;
   top: 0;
-  z-index: 999;
-  background: #0f2027;
-  padding: 10px 20px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  left: 0;
+  z-index: 1000;
+  background: rgba(10, 14, 23, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 14px 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
   font-family: 'Outfit', sans-serif;
+  box-sizing: border-box;
 }
 
 .navbar-container {
-  max-width: 1200px;
+  max-width: 1300px;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -22,89 +25,87 @@
 }
 
 .logo {
-  color: #00f7ff;
-  font-size: 1.8rem;
-  font-weight: 700;
+  color: #61DBFB;
+  font-size: 1.6rem;
+  font-weight: 800;
   cursor: pointer;
+  letter-spacing: -0.5px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: opacity 0.2s ease;
+}
+
+.logo:hover {
+  opacity: 0.85;
 }
 
 .nav-links {
   display: flex;
-  gap: 1.5rem;
+  align-items: center;
+  gap: 1.8rem;
 }
 
-.nav-links a {
+.nav-item-link {
   text-decoration: none;
-  color: #e0e0e0;
-  font-size: 1.1rem;
+  color: #cbd5e1;
+  font-size: 0.98rem;
+  font-weight: 600;
   position: relative;
-  transition: color 0.3s;
+  transition: color 0.25s ease;
+  cursor: pointer;
 }
 
-.nav-links a:hover,
-.nav-links a.active {
-  color: #00f7ff;
+.nav-item-link:hover,
+.nav-item-link.active-link {
+  color: #61DBFB;
 }
 
-.nav-links a::after {
+.nav-item-link::after {
   content: '';
   position: absolute;
-  bottom: -5px;
+  bottom: -6px;
   left: 0;
   width: 0%;
   height: 2px;
-  background-color: #00f7ff;
-  transition: width 0.3s;
+  background: linear-gradient(90deg, #61DBFB, #6366f1);
+  transition: width 0.3s ease;
+  border-radius: 2px;
 }
 
-.nav-links a:hover::after,
-.nav-links a.active::after {
+.nav-item-link:hover::after,
+.nav-item-link.active-link::after {
   width: 100%;
 }
 
-/* Hamburger Menu (Mobile) */
 .menu-toggle {
   display: none;
-  flex-direction: column;
+  font-size: 1.6rem;
+  color: #fff;
   cursor: pointer;
-  gap: 5px;
+  user-select: none;
 }
 
-.menu-toggle span {
-  width: 25px;
-  height: 3px;
-  background-color: #fff;
-  transition: all 0.3s ease;
-}
+@media (max-width: 900px) {
+  .menu-toggle {
+    display: block;
+  }
 
-.menu-toggle.open span:nth-child(1) {
-  transform: rotate(45deg) translateY(8px);
-}
-.menu-toggle.open span:nth-child(2) {
-  opacity: 0;
-}
-.menu-toggle.open span:nth-child(3) {
-  transform: rotate(-45deg) translateY(-8px);
-}
-
-/* Responsive */
-@media (max-width: 768px) {
   .nav-links {
     position: absolute;
-    top: 60px;
+    top: 100%;
     left: 0;
-    flex-direction: column;
-    background: #142d3c;
     width: 100%;
-    padding: 1rem 2rem;
+    flex-direction: column;
+    background: rgba(10, 14, 23, 0.96);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1.5rem 2rem;
+    gap: 1.4rem;
     display: none;
   }
 
   .nav-links.active {
-    display: flex;
-  }
-
-  .menu-toggle {
     display: flex;
   }
 }

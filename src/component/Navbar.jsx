@@ -1,18 +1,29 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import './Navbar.css';
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [clickedNav, setClickedNav] = useState('');
   const location = useLocation();
   const navigate = useNavigate();
 
-  const scrollToHomeSection = (sectionId) => {
-    if (location.pathname === '/') {
+  const handleHomeClick = () => {
+    setIsOpen(false);
+    if (location.pathname !== '/') {
+      navigate('/');
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
+  const handleSectionScroll = (sectionId) => {
+    setIsOpen(false);
+    if (location.pathname !== '/') {
+      navigate(`/#${sectionId}`);
+    } else {
       const element = document.getElementById(sectionId);
       if (element) {
-        const offset = 80;
+        const offset = 90;
         const elementPosition =
           element.getBoundingClientRect().top + window.pageYOffset;
         window.scrollTo({
@@ -20,91 +31,69 @@ function Navbar() {
           behavior: 'smooth',
         });
       }
-    } else {
-      navigate(`/#${sectionId}`);
     }
   };
-
-  useEffect(() => {
-    if (clickedNav) {
-      document.title = clickedNav;
-    }
-  }, [clickedNav]);
-
-  useEffect(() => {
-    const handleHashLink = () => {
-      if (location.pathname === '/' && window.location.hash) {
-        const sectionId = window.location.hash.substring(1);
-        setTimeout(() => {
-          scrollToHomeSection(sectionId);
-        }, 100);
-      }
-    };
-    handleHashLink();
-  }, [location]);
 
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        {/* Logo */}
-        <div className="logo" onClick={() => navigate('/')}>
-          Tanish Portfolio
+        <div className="logo" onClick={handleHomeClick}>
+          <span>Tanish Patidar</span>
         </div>
 
-        {/* Hamburger Menu */}
         <div className="menu-toggle" onClick={() => setIsOpen(!isOpen)}>
           ☰
         </div>
 
-        {/* Nav Links */}
         <div className={`nav-links ${isOpen ? 'active' : ''}`}>
-          <NavLink
-            to="/#profile"
-            className={({ isActive }) => (isActive ? 'active-link' : '')}
-            onClick={() => {
-              setClickedNav('Home');
-              setIsOpen(false);
-            }}
-          >
+          <a className="nav-item-link" onClick={handleHomeClick}>
             Home
-          </NavLink>
-          <NavLink
-            to="/DSA"
-            className={({ isActive }) => (isActive ? 'active-link' : '')}
-            onClick={() => {
-              setClickedNav('DSA');
-              setIsOpen(false);
-            }}
+          </a>
+          <a
+            className="nav-item-link"
+            onClick={() => handleSectionScroll('experience')}
           >
-            DSA
-          </NavLink>
+            Experience
+          </a>
           <NavLink
             to="/FullStack"
-            className={({ isActive }) => (isActive ? 'active-link' : '')}
-            onClick={() => {
-              setClickedNav('FullStack');
-              setIsOpen(false);
-            }}
+            className={({ isActive }) =>
+              isActive ? 'nav-item-link active-link' : 'nav-item-link'
+            }
+            onClick={() => setIsOpen(false)}
           >
-            FullStack
+            Projects
+          </NavLink>
+          <a
+            className="nav-item-link"
+            onClick={() => handleSectionScroll('skills')}
+          >
+            Skills
+          </a>
+          <NavLink
+            to="/DSA"
+            className={({ isActive }) =>
+              isActive ? 'nav-item-link active-link' : 'nav-item-link'
+            }
+            onClick={() => setIsOpen(false)}
+          >
+            DSA & C++
           </NavLink>
           <NavLink
             to="/Journey"
-            className={({ isActive }) => (isActive ? 'active-link' : '')}
-            onClick={() => {
-              setClickedNav('Journey');
-              setIsOpen(false);
-            }}
+            className={({ isActive }) =>
+              isActive ? 'nav-item-link active-link' : 'nav-item-link'
+            }
+            onClick={() => setIsOpen(false)}
           >
             Journey
           </NavLink>
           <NavLink
             to="/contact"
-            className={({ isActive }) => (isActive ? 'active-link' : '')}
-            onClick={() => {
-              setClickedNav('Contact');
-              setIsOpen(false);
-            }}
+            className={({ isActive }) =>
+              isActive ? 'nav-item-link active-link' : 'nav-item-link'
+            }
+            onClick={() => setIsOpen(false)}
           >
             Contact
           </NavLink>

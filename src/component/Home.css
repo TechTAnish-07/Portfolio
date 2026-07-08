@@ -1,23 +1,23 @@
 .home-container {
   display: flex;
   flex-direction: column;
-  padding: 2rem;
+  gap: 1.5rem;
+  padding-top: 85px;
   min-height: 100vh;
-
-  /* Sleek, tech-style gradient overlay */
-  background: linear-gradient(135deg, rgba(15, 32, 39, 0.9), rgba(32, 58, 67, 0.9), rgba(44, 83, 100, 0.9)),
-              url("https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1350&q=80");
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed; /* parallax effect */
-  background-blend-mode: overlay;
-  color: white;
-}
-.section-left,
-.section-right {
-  margin: 2rem 0;   /* example */
-}
-.fullstack-section {
-  margin-top: 1rem; /* tighten gap */
+  background: radial-gradient(circle at top, #0d111c 0%, #06080e 100%);
+  color: #fff;
+  overflow-x: hidden;
 }
 
+.home-footer {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: #64748b;
+  font-size: 0.95rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  margin-top: 2rem;
+}
+
+.home-footer span {
+  color: #61DBFB;
+}

@@ -1,407 +1,130 @@
-/* ===== Container & Heading ===== */
 .language-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: flex-start;
-  gap: clamp(20px, 5vw, 40px);
-  padding: clamp(2rem, 6vw, 4rem) clamp(1.5rem, 4vw, 3rem);
-  background: linear-gradient(135deg, rgba(95, 84, 141, 0.25), rgba(58, 59, 110, 0.35));
-  backdrop-filter: blur(12px);
-  border-radius: 1rem;
-  width: 100%;
-  max-width: 1400px;
-  margin: 0 auto;
-  box-sizing: border-box;
-  height: max-content;
+  width: 95%;
+  max-width: 1250px;
+  margin: 2rem auto;
+  padding: 4rem 2rem;
+  background: rgba(18, 22, 34, 0.85);
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(14px);
+  color: #fff;
+}
+
+.language-heading-section {
+  text-align: center;
+  margin-bottom: 3rem;
 }
 
 .language-heading {
-  width: 100%;
-  text-align: center;
-  font-size: clamp(1.8rem, 6vw, 2.5rem);
-  font-weight: 700;
-  color: #fff;
-  margin-bottom: clamp(.5rem, 4vw, 1.2rem);
-  text-shadow: 1px 2px 8px rgba(0, 0, 0, 0.3);
-  line-height: 1.2;
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin: 0 0 0.8rem 0;
+  background: linear-gradient(135deg, #ffffff 0%, #a5b4fc 60%, #61DBFB 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-/* ===== Card Wrappers ===== */
-.DSA-card, .dev-card, .python-card {
-  flex: 1 1 320px;
-  max-width: 420px;
-  min-width: 300px;
-  margin: 0;
-  width: 100%;
-  box-sizing: border-box;
+.language-subheading {
+  color: #94a3b8;
+  font-size: 1.15rem;
+  max-width: 750px;
+  margin: 0 auto;
 }
 
-/* ===== Flip Card Base ===== */
-.flip-card {
-  background: transparent;
-  width: 100%;
-  height: 100%;
-  cursor: pointer;
-  touch-action: manipulation;
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+  gap: 2rem;
 }
 
-/* --- DSA & Python: min-height so content can breathe --- */
-.DSA-card .flip-card-inner,
-.python-card .flip-card-inner {
-  position: relative;
-  width: 100%;
-  min-height: clamp(400px, 55vw, 450px);
-  transition: transform 0.9s cubic-bezier(0.4, 0.2, 0.2, 1);
-  transform-style: preserve-3d;
-}
-
-.DSA-card .flip-card-front,
-.DSA-card .flip-card-back,
-.python-card .flip-card-front,
-.python-card .flip-card-back {
-  position: absolute;
-  width: 100%;
-  min-height: clamp(400px, 55vw, 450px);
-}
-
-/* --- Dev card: FIXED height — never driven by content --- */
-.dev-card .flip-card-inner {
-  position: relative;
-  width: 100%;
-  height: 480px;        /* fixed — change this one value to resize the card */
-  transition: transform 0.9s cubic-bezier(0.4, 0.2, 0.2, 1);
-  transform-style: preserve-3d;
-}
-
-.dev-card .flip-card-front {
-  position: absolute;
-  width: 100%;
-  height: 100%;          /* fills the fixed parent exactly */
-
-  /* flex column so nav is always pinned to the bottom */
+.skill-category-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 2.2rem;
+  transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+  gap: 1.2rem;
 }
 
-/* Scrollable skill area inside dev-card */
-.dev-card .flip-card-front .dev-scroll-area {
-  flex: 1 1 auto;
-  overflow-y: auto;
-  padding-right: 4px;
-  /* thin custom scrollbar so it doesn't look jarring */
-  scrollbar-width: thin;
-  scrollbar-color: rgba(255,255,255,0.25) transparent;
-}
-.dev-card .flip-card-front .dev-scroll-area::-webkit-scrollbar {
-  width: 4px;
-}
-.dev-card .flip-card-front .dev-scroll-area::-webkit-scrollbar-track {
-  background: transparent;
-}
-.dev-card .flip-card-front .dev-scroll-area::-webkit-scrollbar-thumb {
-  background: rgba(255,255,255,0.25);
-  border-radius: 4px;
+.skill-category-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(97, 219, 251, 0.35);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
 }
 
-/* Nav always pinned at bottom of dev-card */
-.dev-card .card-navigation {
-  flex-shrink: 0;
-  margin-top: 8px;
-  padding-top: 8px;
-  border-top: 1px solid rgba(255,255,255,0.1);
-}
-
-/* ===== Shared Front & Back Face Styles ===== */
-.flip-card-front, .flip-card-back {
-  backface-visibility: hidden;
-  border-radius: 16px;
-  padding: 1.5rem;                           /* uniform padding — no clamp needed here */
-  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.25);
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(12px);
-  color: #fff;
-  box-sizing: border-box;
-  overflow: hidden;
-}
-
-/* Reset browser h2 defaults; keep consistent spacing */
-.flip-card-front h2,
-.flip-card-back h2 {
-  font-size: clamp(1.1rem, 3.5vw, 1.5rem);
-  margin: 0 0 0.5rem 0;                      /* no top margin, tight bottom */
-  color: #f3f3f3;
-  line-height: 1.3;
-}
-
-/* Skill count label ("3 topics", "4 skills") */
-.skill-count {
-  margin: 0 0 1rem 0;                        /* controlled — no browser default 1em */
-  font-size: 0.8rem;
-  opacity: 0.55;
-  letter-spacing: 0.03em;
-}
-
-.flip-card-front {
-  transform: rotateY(0deg);
-}
-
-.flip-card-back {
-  transform: rotateY(180deg);
-  text-align: center;
-  font-size: clamp(0.9rem, 2.5vw, 1rem);
-  line-height: 1.7;
+.category-header {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 0;                                    /* let children control their own spacing */
-}
-
-/* Reset <p> margins inside back face */
-.flip-card-back p {
-  margin: 0 0 1rem 0;
-}
-.flip-card-back p:last-child {
-  margin-bottom: 0;
-}
-
-.flip-card.flipped .flip-card-inner {
-  transform: rotateY(180deg);
-}
-
-/* ===== Skill Section ===== */
-.skill {
-  margin-bottom: 0.85rem;                    /* tighter, even spacing between skills */
-}
-
-/* Remove bottom margin from the last skill — no gap before nav / flip-instruction */
-.skill:last-of-type {
-  margin-bottom: 0;
-}
-
-.skill-header {
-  display: flex;
-  justify-content: space-between;
   align-items: center;
-  font-weight: 500;
-  margin: 0 0 5px 0;                         /* explicit, no browser default */
-  flex-wrap: wrap;
+  gap: 0.8rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  padding-bottom: 1rem;
+}
+
+.category-icon {
+  font-size: 1.8rem;
+  color: #61DBFB;
+}
+
+.category-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+}
+
+.skills-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.skill-item {
+  display: flex;
+  flex-direction: column;
   gap: 0.4rem;
 }
 
-.skill-name {
-  font-size: clamp(0.82rem, 2.2vw, 0.93rem);
-  flex: 1;
-  min-width: 0;
-  margin: 0;
-}
-
-.stars {
-  color: gold;
-  font-size: clamp(0.75rem, 2vw, 0.85rem);
-  flex-shrink: 0;
-  margin: 0;
-}
-
-.progress-bar {
-  height: 7px;
-  background: rgba(255, 255, 255, 0.22);
-  border-radius: 5px;
-  overflow: hidden;
-  margin: 5px 0;                             /* symmetric top/bottom */
-}
-
-.progress {
-  height: 100%;
-  background: linear-gradient(90deg, #61dbfb, #4cafef, #2196f3);
-  border-radius: 5px;
-  transition: width 0.5s ease;
-}
-
-.skill-footer {
+.skill-top {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: clamp(0.68rem, 2vw, 0.78rem);
-  margin: 0;                                 /* progress-bar margin handles the gap */
 }
 
-.level {
-  text-transform: capitalize;
-  flex: 1;
-}
-
-.level.learning  { color: #ff9800; }
-.level.advanced  { color: #4caf50; }
-.level.expert    { color: #00e676; }
-
-.percent {
+.skill-name {
+  font-size: 0.98rem;
   font-weight: 600;
-  color: #ddd;
-  flex-shrink: 0;
+  color: #e2e8f0;
 }
 
-/* ===== Navigation Buttons (shared) ===== */
-.card-navigation {
-  margin-top: 1rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: clamp(0.8rem, 3vw, 1.2rem);
-  flex-wrap: wrap;
+.skill-level-badge {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #61DBFB;
+  background: rgba(97, 219, 251, 0.1);
+  padding: 0.2rem 0.6rem;
+  border-radius: 6px;
 }
 
-.card-navigation button {
-  background: rgba(255, 255, 255, 0.15);
-  border: none;
-  padding: clamp(0.4rem, 1.5vw, 0.5rem);
-  border-radius: 12px;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 44px;
-  min-height: 44px;
+.skill-bar-bg {
+  width: 100%;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  overflow: hidden;
 }
 
-.card-navigation button:hover,
-.card-navigation button:focus {
-  background: rgba(255, 255, 255, 0.3);
-  transform: scale(1.1);
-  outline: none;
-}
-
-.card-navigation button:active {
-  transform: scale(0.95);
-}
-
-.java-icon {
-  width: clamp(35px, 8vw, 55px);
-  height: clamp(35px, 8vw, 55px);
-  object-fit: contain;
-}
-
-/* ===== Flip Instruction Text ===== */
-.flip-instruction {
-  margin: 0.85rem 0 0 0;                     /* tight top gap, no bottom bleed */
-  font-size: clamp(0.72rem, 2vw, 0.82rem);
-  font-style: italic;
-  opacity: 0.6;
-  text-align: center;
-  line-height: 1.4;
-}
-
-/* ===== Responsive Breakpoints ===== */
-@media (max-width: 1200px) {
-  .language-container {
-    gap: clamp(20px, 3vw, 30px);
-  }
-  .DSA-card, .dev-card, .python-card {
-    flex: 1 1 300px;
-    max-width: 450px;
-  }
+.skill-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #61DBFB, #6366f1);
+  border-radius: 999px;
+  transition: width 1s ease-out;
 }
 
 @media (max-width: 768px) {
-  .language-container {
-    flex-direction: column;
-    align-items: center;
-    gap: 1.75rem;
-    padding: 2rem 1.5rem;                    /* consistent vertical/horizontal */
-  }
-  .DSA-card, .dev-card, .python-card {
-    flex: none;
-    width: 100%;
-    max-width: 520px;
-    min-width: unset;
-  }
-  .DSA-card .flip-card-inner,
-  .python-card .flip-card-inner {
-    min-height: 400px;
-  }
-  .DSA-card .flip-card-front,
-  .DSA-card .flip-card-back,
-  .python-card .flip-card-front,
-  .python-card .flip-card-back {
-    min-height: 400px;
-  }
-  .dev-card .flip-card-inner {
-    height: 500px;
-  }
-}
-
-@media (max-width: 480px) {
-  .language-container {
-    padding: 1.5rem 1rem;
-    gap: 1.5rem;
-    margin: 0;                               /* remove side margin, let padding handle it */
-  }
-  .DSA-card, .dev-card, .python-card {
-    max-width: 100%;
-  }
-  .flip-card-front, .flip-card-back {
-    padding: 1.25rem;                        /* slightly tighter on mobile */
-    border-radius: 12px;
-  }
-  .DSA-card .flip-card-inner,
-  .python-card .flip-card-inner {
-    min-height: 370px;
-  }
-  .DSA-card .flip-card-front,
-  .DSA-card .flip-card-back,
-  .python-card .flip-card-front,
-  .python-card .flip-card-back {
-    min-height: 370px;
-  }
-  .dev-card .flip-card-inner {
-    height: 420px;
-  }
-  .skill-name { font-size: 0.88rem; }
-  .stars      { font-size: 0.82rem; }
-  .card-navigation {
-    gap: 1rem;
-    margin-top: 0.75rem;
-  }
-  .java-icon {
-    width: 42px;
-    height: 42px;
-  }
-}
-
-@media (max-width: 360px) {
-  .language-container {
-    padding: 1.25rem 0.875rem;
-    border-radius: 0.5rem;
-  }
-  .flip-card-front, .flip-card-back {
-    padding: 1rem;
-    border-radius: 10px;
-  }
-  .language-heading {
-    font-size: 1.5rem;
-  }
-  .dev-card .flip-card-inner {
-    height: 410px;
-  }
-}
-
-/* ===== Touch & Accessibility ===== */
-@media (hover: none) and (pointer: coarse) {
-  .card-navigation button {
-    min-width: 48px;
-    min-height: 48px;
-  }
-  .flip-instruction {
-    font-size: 0.9rem;
-    opacity: 0.8;
-  }
-}
-
-/* ===== High DPI / Retina ===== */
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-  .flip-card-front, .flip-card-back {
-    backdrop-filter: blur(8px);
+  .skills-grid {
+    grid-template-columns: 1fr;
   }
 }

@@ -1,0 +1,220 @@
+.experience-section {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+  color: #e0e0e0;
+}
+
+.experience-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.section-badge {
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  background: rgba(97, 219, 251, 0.1);
+  border: 1px solid rgba(97, 219, 251, 0.3);
+  color: #61DBFB;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
+}
+
+.experience-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #ffffff 0%, #a5b4fc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0;
+}
+
+.experience-subtitle {
+  color: #94a3b8;
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+}
+
+.experience-timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.experience-card {
+  background: rgba(20, 24, 33, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 2.2rem;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.experience-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, #61DBFB, #6366f1);
+}
+
+.experience-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(97, 219, 251, 0.35);
+  box-shadow: 0 20px 45px rgba(97, 219, 251, 0.12);
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  padding-bottom: 1.2rem;
+}
+
+.company-info h3 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 0.4rem 0;
+}
+
+.role-title {
+  font-size: 1.15rem;
+  color: #61DBFB;
+  font-weight: 600;
+  margin: 0;
+}
+
+.location-tag {
+  color: #94a3b8;
+  font-size: 0.95rem;
+  margin-top: 0.3rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.duration-pill {
+  background: rgba(99, 102, 241, 0.15);
+  border: 1px solid rgba(99, 102, 241, 0.4);
+  color: #a5b4fc;
+  padding: 0.45rem 1rem;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.experience-points {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.8rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.experience-points li {
+  position: relative;
+  padding-left: 1.8rem;
+  line-height: 1.7;
+  color: #cbd5e1;
+  font-size: 1.02rem;
+}
+
+.experience-points li::before {
+  content: '▹';
+  position: absolute;
+  left: 0;
+  top: -1px;
+  color: #61DBFB;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.experience-points li strong {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.tech-tag {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #e2e8f0;
+  padding: 0.35rem 0.85rem;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.tech-tag:hover {
+  background: rgba(97, 219, 251, 0.15);
+  border-color: rgba(97, 219, 251, 0.4);
+  color: #61DBFB;
+}
+
+.achievement-banner {
+  margin-top: 2rem;
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.12), rgba(217, 119, 6, 0.05));
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  border-radius: 16px;
+  padding: 1.5rem 1.8rem;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.achievement-icon {
+  font-size: 2.2rem;
+  color: #f59e0b;
+  flex-shrink: 0;
+}
+
+.achievement-content h4 {
+  margin: 0 0 0.3rem 0;
+  color: #fbbf24;
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.achievement-content p {
+  margin: 0;
+  color: #cbd5e1;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .experience-card {
+    padding: 1.5rem;
+  }
+  .card-top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .experience-title {
+    font-size: 2rem;
+  }
+}

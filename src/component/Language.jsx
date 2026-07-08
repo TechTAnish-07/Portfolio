@@ -1,167 +1,106 @@
-import React, { useState } from 'react';
-import './Language.css'; // Ensure this CSS file is in the same folder
-import { FaReact } from "react-icons/fa";
-import Javaimg from '../assets/Javaimg.webp'; // Verify this path is correct
-import Devimg from '../assets/Dev-img.webp';  // Verify this path is correct
-import { percent } from 'framer-motion';
+import React from "react";
+import { motion } from "framer-motion";
+import "./Language.css";
 
 const Language = () => {
-  // State to track which card is flipped
-  const [isFlipped, setIsFlipped] = useState({
-    dsa: false,
-    python: false,
-  });
-
-  // State to track the view of the middle card
-  const [devCardView, setDevCardView] = useState('dev'); // 'dev', 'frontend', or 'backend'
-
-  // Toggles the flip state for a specific card
-  const toggleFlip = (cardName) => {
-    setIsFlipped((prev) => ({
-      ...prev,
-      [cardName]: !prev[cardName],
-    }));
-  };
-
-  // Skill data arrays
-  const frontendSkills = [
-    { name: "React", level: "Advanced", stars: 4, percent: 90 },
-    { name: "JavaScript", level: "Expert", stars: 5, percent: 88 },
-    { name: "HTML/CSS", level: "Expert", stars: 5, percent: 90 },
+  const categories = [
+    {
+      title: "AI & LLMs",
+      icon: "🤖",
+      skills: [
+        { name: "LangChain & RAG", level: "Production", percent: 92 },
+        { name: "AI Agents & Autonomous Workflows", level: "Advanced", percent: 90 },
+        { name: "Prompt Engineering & Vector Embeddings", level: "Expert", percent: 95 },
+      ],
+    },
+    {
+      title: "Programming Languages",
+      icon: "💻",
+      skills: [
+        { name: "C++ (DSA & Competitive Coding)", level: "Expert (1600+ Solved)", percent: 95 },
+        { name: "Java & JavaScript (ES6+)", level: "Advanced", percent: 90 },
+        { name: "Python & SQL (PostgreSQL)", level: "Advanced", percent: 88 },
+      ],
+    },
+    {
+      title: "Backend & Architecture",
+      icon: "⚙️",
+      skills: [
+        { name: "Spring Boot & Spring Security", level: "Advanced", percent: 90 },
+        { name: "WebSockets (STOMP/SockJS)", level: "Advanced", percent: 88 },
+        { name: "REST APIs & JWT Auth / RBAC", level: "Production", percent: 92 },
+      ],
+    },
+    {
+      title: "Frontend Engineering",
+      icon: "⚛️",
+      skills: [
+        { name: "React.js & Redux Toolkit", level: "Advanced", percent: 92 },
+        { name: "WebRTC & Monaco Editor Integration", level: "Advanced", percent: 85 },
+        { name: "Tailwind CSS & Material UI", level: "Expert", percent: 90 },
+      ],
+    },
+    {
+      title: "Tools & Cloud Platforms",
+      icon: "☁️",
+      skills: [
+        { name: "Git/GitHub, Linux & Docker", level: "Advanced", percent: 90 },
+        { name: "AWS, Vercel & Render", level: "Intermediate", percent: 82 },
+        { name: "Judge0 Engine & Maven", level: "Advanced", percent: 88 },
+      ],
+    },
   ];
-  const backendSkills = [
-    { name: "Springboot", level: "Learning", stars: 4, percent: 80 },
-    { name: "Java", level: "Advanced", stars: 4, percent: 82 },
-  ];
-  const dsaSkills = [
-    { name: "C++, DSA", level: "Advanced", stars: 4, percent: 90 },
-    { name: "Arrays & Strings, Linked List", level: "Advanced", stars: 4, percent: 90 },
-    { name: "Dynamic Programming, Graphs, Trees", level: "Intermediate", stars: 4, percent: 80 },
-  ];
-  const pythonSkills = [
-    { name: "Python Basics", level: "Advanced", stars: 4, percent: 90 },
-    { name: "Data Analysis", level: "Intermediate", stars: 4, percent: 90 },
-    { name: "Machine Learning", level: "Learning", stars: 3.5, percent: 70 },
-  ];
-  const devSkills = [
-    { name: "Git", level: "Advanced", stars: 4, percent: 90 },
-    { name: "VSCode", level: "Expert", stars: 5, percent: 95 },
-    { name: "Netlify", level: "Intermediate", stars: 4, percent: 80 },
-    { name :"Render", level:"Intermediate" , stars : 4 , percent:75}
-  ];
-
-  // Reusable SkillBar Component
-  const SkillBar = ({ skill }) => (
-    <div className="skill">
-      <div className="skill-header">
-        <span className="skill-name">{skill.name}</span>
-        <span className="stars">{"⭐".repeat(Math.floor(skill.stars))}</span>
-      </div>
-      <div className="progress-bar">
-        <div className="progress" style={{ width: `${skill.percent}%` }}></div>
-      </div>
-      <div className="skill-footer">
-        <span className={`level ${skill.level.toLowerCase()}`}>{skill.level}</span>
-        <span className="percent">{skill.percent}%</span>
-      </div>
-    </div>
-  );
 
   return (
-    <div className='language-container'>
-     <h1 className='language-heading'>💻 Tech Stack</h1>
+    <section className="language-container" id="skills">
+      <motion.div
+        className="language-heading-section"
+        initial={{ opacity: 0, y: -20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
+        <h1 className="language-heading">Technical Expertise</h1>
+        <p className="language-subheading">
+          Full-Stack engineering stack combining modern AI frameworks, production Spring Boot backends, real-time protocols, and competitive algorithmic mastery.
+        </p>
+      </motion.div>
 
-      {/* DSA Card */}
-      <div className='DSA-card'>
-        <div
-          className={`flip-card ${isFlipped.dsa ? 'flipped' : ''}`}
-          onClick={() => toggleFlip('dsa')}
-        >
-          <div className="flip-card-inner">
-            {/* CORRECTED STRUCTURE: Both front and back are always rendered */}
-            <div className="flip-card-front">
-              <h2>Data Structures & Algorithms</h2>
-              <p>{dsaSkills.length} topics</p>
-              {dsaSkills.map((skill, i) => <SkillBar skill={skill} key={i} />)}
-              <p className="flip-instruction">Click to see details</p>
+      <div className="skills-grid">
+        {categories.map((cat, idx) => (
+          <motion.div
+            key={idx}
+            className="skill-category-card"
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: idx * 0.1 }}
+          >
+            <div className="category-header">
+              <span className="category-icon">{cat.icon}</span>
+              <h3 className="category-title">{cat.title}</h3>
             </div>
-            <div className="flip-card-back">
-              <p>
-                I practiced DSA using Striver’s Sheet for structured coverage and enhanced my problem-solving on Codeforces, building strong logical and competitive programming skills.
-              </p>
-              <p className="flip-instruction">Click to flip back</p>
-            </div>
-          </div>
-        </div>
-      </div>
 
-      {/* Dev / Backend / Frontend Card (This one does not flip, it switches content) */}
-      <div className="dev-card">
-        <div className="flip-card">
-          <div className="flip-card-inner">
-            <div className="flip-card-front">
-              {devCardView === 'dev' && (
-                <>
-                  <h2>Dev Tools</h2>
-                  <p>{devSkills.length} skills</p>
-                  {devSkills.map((skill, i) => <SkillBar skill={skill} key={i} />)}
-                  <div className="card-navigation">
-                    <button onClick={() => setDevCardView("frontend")}><FaReact style={{ color: "#61DBFB", width: "60px", height: "60px" }} /></button>
-                    <button onClick={() => setDevCardView("backend")}><img src={Javaimg} alt="Java" title='backend' className="java-icon" /></button>
+            <div className="skills-list">
+              {cat.skills.map((skill, i) => (
+                <div key={i} className="skill-item">
+                  <div className="skill-top">
+                    <span className="skill-name">{skill.name}</span>
+                    <span className="skill-level-badge">{skill.level}</span>
                   </div>
-                </>
-              )}
-              {devCardView === 'frontend' && (
-                 <>
-                  <h2>Frontend Development</h2>
-                  <p>{frontendSkills.length} skills</p>
-                  {frontendSkills.map((skill, i) => <SkillBar skill={skill} key={i} />)}
-                   <div className="card-navigation">
-                     <button onClick={() => setDevCardView("dev")}><img src={Devimg} alt="Dev" title='dev' className="java-icon" /></button>
-                     <button onClick={() => setDevCardView("backend")}><img src={Javaimg} alt="Java" title="backend" className="java-icon" /></button>
-                   </div>
-                 </>
-              )}
-              {devCardView === 'backend' && (
-                <>
-                  <h2>Backend Development</h2>
-                  <p>{backendSkills.length} skills</p>
-                  {backendSkills.map((skill, i) => <SkillBar skill={skill} key={i} />)}
-                  <div className="card-navigation">
-                    <button onClick={() => setDevCardView("dev")}><img src={Devimg} alt="Dev" title='dev' className="java-icon" /></button>
-                    <button onClick={() => setDevCardView("frontend")}><FaReact style={{ color: "#61DBFB", width: "60px", height: "60px" }} /></button>
+                  <div className="skill-bar-bg">
+                    <div
+                      className="skill-bar-fill"
+                      style={{ width: `${skill.percent}%` }}
+                    />
                   </div>
-                </>
-              )}
+                </div>
+              ))}
             </div>
-          </div>
-        </div>
+          </motion.div>
+        ))}
       </div>
-
-      {/* Python Card */}
-      <div className='python-card'>
-        <div
-          className={`flip-card ${isFlipped.python ? 'flipped' : ''}`}
-          onClick={() => toggleFlip('python')}
-        >
-          <div className="flip-card-inner">
-            {/* CORRECTED STRUCTURE: Both front and back are always rendered */}
-            <div className="flip-card-front">
-              <h2>Python & Machine Learning</h2>
-              <p>{pythonSkills.length} skills</p>
-              {pythonSkills.map((skill, i) => <SkillBar skill={skill} key={i} />)}
-              <p className="flip-instruction">Click to see details</p>
-            </div>
-            <div className="flip-card-back">
-              <p>
-                Certified in Machine Learning from Coursera, I've applied Python for data analytics and visualization in projects analyzing COVID-19 trends and IPL match data.
-              </p>
-              <p className="flip-instruction">Click to flip back</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    </section>
   );
 };
 
