@@ -19,6 +19,8 @@ const FullStack = () => {
       techStack: [
         "Spring Boot",
         "React.js",
+        "Python",
+        "AI Agent",
         "PostgreSQL",
         "WebSockets",
         "WebRTC",
@@ -27,6 +29,7 @@ const FullStack = () => {
       ],
       highlights: [
         "Developed a real-time technical interview platform enabling live coding and P2P video communication.",
+        "Engineered an AI Mock Interview feature powered by a custom Python AI Agent to conduct dynamic interviews and preserve candidate conversation history.",
         "Implemented low-latency collaborative code editing via WebSockets with role-based synchronization.",
         "Integrated WebRTC for A/V communication and Monaco Editor for a browser-based IDE experience.",
         "Secured code execution by proxying Judge0 requests through the backend, preventing API key exposure.",
