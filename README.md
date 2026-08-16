@@ -3,7 +3,8 @@
 This is my **personal portfolio website**, built to showcase my skills, projects, and experiences as a developer.  
 
 ---
-
+## Live Link
+[Visit My Portfolio](https://tanishportfolio29.netlify.app/)
 ## 🚀 Features
 - Modern and responsive design for all devices 📱💻  
 - Smooth animations and interactive UI ✨  
