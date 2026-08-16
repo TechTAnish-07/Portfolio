@@ -7,25 +7,25 @@ const Experience = () => {
   const experiences = [
     {
       company: "47Billion",
-      role: "AI & Backend Development Intern",
-      duration: "May 2026 – Present",
+      role: "Software Development Engineer Intern",
+      duration: "May 2026 – July 2026",
       location: "Indore, India",
       mapUrl: "https://www.google.com/maps/search/?api=1&query=47Billion+Crystal+IT+Park+Khandwa+Road+Indore+452001",
       points: [
         <>
-          Built an intelligent <strong>QA Bot</strong> using <strong>LangChain</strong> and <strong>RAG architectures</strong> to automate queries and enhance retrieval accuracy.
+          Engineered a <strong>RAG-based QA Bot</strong> utilizing <strong>LangChain</strong>, driving an <strong>80% reduction</strong> in manual query resolution time and achieving <strong>90% retrieval accuracy</strong> for critical internal workflows.
         </>,
         <>
-          Architected scalable data pipelines with <strong>vector embeddings</strong> to provide contextual awareness to LLMs across complex workflows.
+          Architected robust data pipelines using <strong>vector embeddings</strong> to process gigabytes of textual data, delivering scalable contextual awareness to LLMs across complex state machines.
         </>,
         <>
-          Applied advanced <strong>prompt engineering</strong> to optimize model performance, reasoning, and autonomous task execution.
+          Optimized model performance and reasoning capabilities through advanced <strong>prompt engineering</strong>, successfully decreasing autonomous task hallucination rates by <strong>90%</strong>.
         </>,
       ],
       techStack: [
         "LangChain",
-        "RAG",
         "AI Agents",
+        "RAG",
         "Prompt Engineering",
         "Vector Embeddings",
         "Python",

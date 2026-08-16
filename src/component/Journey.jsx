@@ -38,13 +38,13 @@ const Journey = () => {
     {
       category: "WORK EXPERIENCE",
       icon: <FaBriefcase size={13} />,
-      date: "May 2026 – Present",
-      title: "47Billion — AI & Backend Development Intern",
+      date: "May 2026 – July 2026",
+      title: "47Billion — Software Development Engineer Intern",
       subtitle: "Indore, India",
       mapUrl: "https://www.google.com/maps/search/?api=1&query=47Billion+Crystal+IT+Park+Khandwa+Road+Indore+452001",
       description:
-        "Developing enterprise QA Bots with LangChain and RAG architectures, engineering vector embedding data pipelines, and optimizing LLM reasoning via advanced prompt engineering.",
-      tags: ["LangChain", "RAG", "Vector Embeddings", "Prompt Engineering", "Python"],
+        "Engineered a RAG-based QA Bot utilizing LangChain (80% query resolution time reduction, 90% retrieval accuracy), architected vector embedding data pipelines, and optimized LLM reasoning via prompt engineering (90% hallucination reduction).",
+      tags: ["LangChain", "AI Agents", "RAG", "Vector Embeddings", "Prompt Engineering"],
     },
     {
       category: "EDUCATION",
