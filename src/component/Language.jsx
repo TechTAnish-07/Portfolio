@@ -5,48 +5,48 @@ import "./Language.css";
 const Language = () => {
   const categories = [
     {
-      title: "AI & LLMs",
+      title: "AI & Data",
       icon: "🤖",
       skills: [
-        { name: "LangChain & RAG", level: "Production", percent: 92 },
-        { name: "AI Agents & Autonomous Workflows", level: "Advanced", percent: 90 },
-        { name: "Prompt Engineering & Vector Embeddings", level: "Expert", percent: 95 },
+        { name: "LangChain & AI Agents", level: "Production", percent: 92 },
+        { name: "RAG & Vector Embeddings", level: "Advanced", percent: 90 },
+        { name: "Prompt Engineering", level: "Expert", percent: 95 },
       ],
     },
     {
-      title: "Programming Languages",
-      icon: "💻",
-      skills: [
-        { name: "C++ (DSA & Competitive Coding)", level: "Expert (1600+ Solved)", percent: 95 },
-        { name: "Java & JavaScript (ES6+)", level: "Advanced", percent: 90 },
-        { name: "Python & SQL (PostgreSQL)", level: "Advanced", percent: 88 },
-      ],
-    },
-    {
-      title: "Backend & Architecture",
+      title: "Backend & Microservices",
       icon: "⚙️",
       skills: [
-        { name: "Spring Boot & Spring Security", level: "Advanced", percent: 90 },
-        { name: "WebSockets (STOMP/SockJS)", level: "Advanced", percent: 88 },
-        { name: "REST APIs & JWT Auth / RBAC", level: "Production", percent: 92 },
+        { name: "Spring Boot & Spring Security", level: "Advanced", percent: 92 },
+        { name: "Node.js & Express", level: "Advanced", percent: 88 },
+        { name: "WebSocket (STOMP) & REST APIs", level: "Production", percent: 92 },
       ],
     },
     {
-      title: "Frontend Engineering",
+      title: "Languages",
+      icon: "💻",
+      skills: [
+        { name: "Java & C++ (DSA Mastery)", level: "Expert (1600+ Solved)", percent: 95 },
+        { name: "JavaScript (ES6+) & Python", level: "Advanced", percent: 90 },
+        { name: "SQL (PostgreSQL) & HTML/CSS", level: "Advanced", percent: 88 },
+      ],
+    },
+    {
+      title: "Frontend",
       icon: "⚛️",
       skills: [
         { name: "React.js & Redux Toolkit", level: "Advanced", percent: 92 },
-        { name: "WebRTC & Monaco Editor Integration", level: "Advanced", percent: 85 },
-        { name: "Tailwind CSS & Material UI", level: "Expert", percent: 90 },
+        { name: "Monaco Editor & WebRTC", level: "Advanced", percent: 88 },
+        { name: "Tailwind CSS", level: "Expert", percent: 90 },
       ],
     },
     {
-      title: "Tools & Cloud Platforms",
-      icon: "☁️",
+      title: "Infrastructure & Tools",
+      icon: "🛠️",
       skills: [
-        { name: "Git/GitHub, Linux & Docker", level: "Advanced", percent: 90 },
-        { name: "AWS, Vercel & Render", level: "Intermediate", percent: 82 },
+        { name: "Git / GitHub & Linux", level: "Advanced", percent: 90 },
         { name: "Judge0 Engine & Maven", level: "Advanced", percent: 88 },
+        { name: "Postman API Testing", level: "Advanced", percent: 90 },
       ],
     },
   ];
