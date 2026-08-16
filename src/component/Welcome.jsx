@@ -13,7 +13,7 @@ const Welcome = ({ onScroll }) => (
       <h2 className="welcome-subtitle">Welcome To My Digital Playground</h2>
 
       <p className="welcome-message">
-        I'm a B.Tech Computer Science student at IIIT Tiruchirappalli and an AI & Backend Development Intern at 47Billion.
+        I'm a B.Tech Computer Science student at IIIT Tiruchirappalli and a Software Development Engineer Intern at 47Billion.
       </p>
       <p className="welcome-message">
         I engineer intelligent RAG architectures, real-time collaboration platforms, and solve competitive programming challenges (1600+ problems solved).

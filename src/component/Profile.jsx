@@ -12,13 +12,13 @@ const Profile = () => {
       <div className="profile-wrapper">
         <div className="profile-text-section">
           <div className="hero-badges">
-            <span className="hero-badge badge-ai">AI & Backend Development Intern @ 47Billion</span>
+            <span className="hero-badge badge-ai">Software Development Engineer Intern @ 47Billion</span>
             <span className="hero-badge badge-edu">B.Tech CSE @ IIIT Tiruchirappalli</span>
           </div>
 
           <h1 className="profile-heading">Tanish Patidar</h1>
           <p className="profile-subheading">
-            Full-Stack & AI Systems Engineer | Problem Solver (1600+ Solved)
+            Full-stack Engineer (Java, Spring Boot, React.js) building production AI/RAG apps with LangChain & LLM agents.
           </p>
 
           <p className="profile-text">
@@ -26,7 +26,7 @@ const Profile = () => {
           </p>
 
           <p className="profile-text">
-            Currently working at <strong>47Billion</strong> developing intelligent QA bots with LangChain & vector databases, and recently reached the <strong>National Semi-Finals in Flipkart Grid 7.0</strong>.
+            Software Development Engineer Intern at <strong>47Billion</strong> engineering RAG-based QA bots with LangChain & vector databases (80% query time reduction, 90% retrieval accuracy), and reached the <strong>National Semi-Finals in Flipkart Grid 7.0</strong>.
           </p>
 
           <div className="profile-stats-grid">
