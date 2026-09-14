@@ -213,7 +213,7 @@
   border-radius: 50%;
   object-fit: cover;
   display: block;
-  border: 5px solid #121622;
+  border: 5px solid #000000;
 }
 
 @media (max-width: 900px) {
